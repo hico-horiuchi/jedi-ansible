@@ -1,0 +1,13 @@
+upstream backend {
+{% for item in clone_numbers %}
+  server clone-{{item}} fail_timeout=1;
+{% endfor %}
+}
+
+server {
+  listen 80;
+
+  location / {
+    proxy_pass http://backend;
+  }
+}

@@ -1,0 +1,8 @@
+---
+- include: image.yml
+
+- include: index.yml
+  with_items: '{{clone_numbers}}'
+
+- include: container.yml
+  with_items: '{{clone_numbers}}'

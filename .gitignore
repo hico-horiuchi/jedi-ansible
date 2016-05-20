@@ -1,0 +1,6 @@
+*#*
+*~
+*.retry
+.*.swp
+.DS_Store
+hosts

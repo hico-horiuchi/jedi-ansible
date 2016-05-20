@@ -1,0 +1,24 @@
+---
+- name: copy load_balancer
+  template:
+    src: load_balancer.j2
+    dest: /tmp/docker/nginx/load_balancer
+
+- name: remove dockerfile
+  file:
+    path: /tmp/docker/nginx/Dockerfile
+    state: absent
+
+- name: start docker container
+  docker:
+    name: nginx
+    image: jedi/nginx
+    links:
+      - 'clone-1:clone-1'
+      - 'clone-2:clone-2'
+      - 'clone-3:clone-3'
+      - 'clone-4:clone-4'
+    ports:
+      - '80:80'
+    volumes:
+      - '/tmp/docker/nginx:/etc/nginx/sites-enabled:ro'

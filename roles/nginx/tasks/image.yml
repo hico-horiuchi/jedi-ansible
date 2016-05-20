@@ -1,0 +1,16 @@
+---
+- name: create context directory
+  file:
+    path: /tmp/docker/nginx
+    state: directory
+    recurse: yes
+
+- name: copy dockerfile
+  copy:
+    src: Dockerfile
+    dest: /tmp/docker/nginx/Dockerfile
+
+- name: build docker image
+  docker_image:
+    path: /tmp/docker/nginx
+    name: jedi/nginx

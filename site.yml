@@ -1,0 +1,24 @@
+---
+- name: install-docker
+  hosts:
+    - all
+  roles:
+    - docker
+  tags:
+    - docker
+
+- name: build-clone
+  hosts:
+    - all
+  roles:
+    - clone
+  tags:
+    - clone
+
+- name: build-nginx
+  hosts:
+    - all
+  roles:
+    - nginx
+  tags:
+    - nginx

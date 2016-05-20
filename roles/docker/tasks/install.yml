@@ -1,0 +1,18 @@
+---
+- name: update apt package index
+  apt:
+    update_cache: yes
+
+- name: install docker
+  apt:
+    name: docker-engine
+
+- name: enable remote api
+  lineinfile:
+    dest: /etc/default/docker
+    line: "DOCKER_OPTS=' -H tcp://0.0.0.0:4750 -H unix:///var/run/docker.sock'"
+
+- name: start docker daemon
+  service:
+    name: docker
+    state: started
