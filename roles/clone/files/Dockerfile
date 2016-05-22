@@ -13,12 +13,13 @@ RUN \
   apt-get -y install nginx && \
   rm -rf /var/lib/apt/lists/* && \
   echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-  chown -R www-data:www-data /var/lib/nginx
+  chown -R www-data:www-data /var/lib/nginx && \
+  rm /etc/nginx/sites-enabled/default
 
 CMD ["nginx"]
 
 EXPOSE 80
 
-VOLUME ["/var/www/html"]
+VOLUME ["/etc/nginx/sites-enabled", "/var/www/html"]
 
 WORKDIR /etc/nginx

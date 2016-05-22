@@ -1,0 +1,13 @@
+server {
+  listen 80;
+  root /var/www/html;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  location /server-status {
+    stub_status on;
+    access_log off;
+  }
+}

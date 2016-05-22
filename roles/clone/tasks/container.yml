@@ -6,4 +6,5 @@
     state: reloaded
     net: jedi_nw
     volumes:
+      - '/etc/docker/clone:/etc/nginx/sites-enabled:ro'
       - '/var/docker/clone-{{item}}:/var/www/html:ro'

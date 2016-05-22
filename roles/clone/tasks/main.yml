@@ -1,6 +1,9 @@
 ---
 - include: image.yml
 
+- include: config.yml
+  become: yes
+
 - include: index.yml
   become: yes
   with_items: '{{clone_numbers}}'

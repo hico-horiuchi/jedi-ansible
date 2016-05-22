@@ -1,0 +1,11 @@
+---
+- name: create configuration directory
+  file:
+    path: /etc/docker/clone
+    state: directory
+    recurse: yes
+
+- name: copy load_balancer
+  copy:
+    src: default
+    dest: /etc/docker/clone/default
