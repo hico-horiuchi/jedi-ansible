@@ -12,7 +12,7 @@
     dest: /etc/default/docker
     line: "DOCKER_OPTS=' -H tcp://0.0.0.0:4750 -H unix:///var/run/docker.sock'"
 
-- name: start docker daemon
+- name: restart docker daemon
   service:
     name: docker
-    state: started
+    state: restarted

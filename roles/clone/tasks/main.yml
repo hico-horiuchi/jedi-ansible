@@ -2,6 +2,7 @@
 - include: image.yml
 
 - include: index.yml
+  become: yes
   with_items: '{{clone_numbers}}'
 
 - include: container.yml

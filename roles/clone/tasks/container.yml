@@ -1,9 +1,9 @@
 ---
-- name: start docker container
+- name: reload docker container {{item}}
   docker:
     name: clone-{{item}}
     image: jedi/clone
-    ports:
-      - '808{{item}}:80'
+    state: reloaded
+    net: jedi_nw
     volumes:
-      - '/tmp/docker/clone-{{item}}:/var/www/html:ro'
+      - '/var/docker/clone-{{item}}:/var/www/html:ro'

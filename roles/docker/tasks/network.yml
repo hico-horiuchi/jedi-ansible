@@ -1,0 +1,9 @@
+---
+- name: check jedi_nw is existed
+  shell: docker network ls | grep jedi_nw
+  register: jedi_nw_exist
+  ignore_errors: yes
+
+- name: create jedi_nw if not exist
+  command: docker network create --driver=bridge jedi_nw
+  when: jedi_nw_exist.rc == 1
