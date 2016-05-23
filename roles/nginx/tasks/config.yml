@@ -1,5 +1,5 @@
 ---
-- name: create configuration directory {{item}}
+- name: create configuration directory
   file:
     path: /etc/docker/nginx
     state: directory
