@@ -12,6 +12,12 @@
     dest: /etc/default/docker
     line: "DOCKER_OPTS=' -H tcp://0.0.0.0:{{ remote_api_port }} -H unix:///var/run/docker.sock'"
 
+- name: allow all access to tcp port {{ remote_api_port }}
+  ufw:
+    rule: allow
+    port: '{{ remote_api_port }}'
+    proto: tcp
+
 - name: restart docker daemon
   service:
     name: docker

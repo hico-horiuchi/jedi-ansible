@@ -1,0 +1,6 @@
+---
+- name: allow all access to tcp port 10000
+  ufw:
+    rule: allow
+    port: 10000
+    proto: tcp

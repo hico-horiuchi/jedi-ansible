@@ -1,0 +1,12 @@
+---
+- name: allow all access to tcp port 8083
+  ufw:
+    rule: allow
+    port: 8083
+    proto: tcp
+
+- name: allow all access to tcp port 8086
+  ufw:
+    rule: allow
+    port: 8086
+    proto: tcp

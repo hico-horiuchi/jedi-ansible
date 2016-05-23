@@ -3,3 +3,6 @@
 
 - include: container.yml
   become: yes
+
+- include: ufw.yml
+  become: yes

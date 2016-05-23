@@ -5,3 +5,6 @@
   become: yes
 
 - include: container.yml
+
+- include: ufw.yml
+  become: yes
