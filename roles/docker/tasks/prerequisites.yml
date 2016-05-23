@@ -17,7 +17,7 @@
 
 - name: install recommended package
   apt:
-    name: linux-image-extra-{{uname_r.stdout}}
+    name: linux-image-extra-{{ uname_r.stdout }}
 
 - name: add new gpg key
   apt_key:

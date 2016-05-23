@@ -1,11 +1,11 @@
 ---
-- name: create document root {{item}}
+- name: create document root {{ item }}
   file:
-    path: /var/docker/clone-{{item}}
+    path: /var/docker/clone-{{ item }}
     state: directory
     recurse: yes
 
-- name: copy index.html {{item}}
+- name: copy index.html {{ item }}
   template:
     src: index.html.j2
-    dest: /var/docker/clone-{{item}}/index.html
+    dest: /var/docker/clone-{{ item }}/index.html

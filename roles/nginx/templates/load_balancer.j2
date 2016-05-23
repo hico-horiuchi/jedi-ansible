@@ -1,6 +1,6 @@
 upstream backend {
 {% for item in clone_numbers %}
-  server clone-{{item}};
+  server clone-{{ item }};
 {% endfor %}
 }
 

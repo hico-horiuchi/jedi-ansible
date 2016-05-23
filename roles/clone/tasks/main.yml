@@ -6,7 +6,7 @@
 
 - include: index.yml
   become: yes
-  with_items: '{{clone_numbers}}'
+  with_items: '{{ clone_numbers }}'
 
 - include: container.yml
-  with_items: '{{clone_numbers}}'
+  with_items: '{{ clone_numbers }}'

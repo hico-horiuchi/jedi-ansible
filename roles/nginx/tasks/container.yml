@@ -4,7 +4,7 @@
     name: nginx
     image: jedi/nginx
     state: reloaded
-    net: '{{docker_network}}'
+    net: '{{ docker_network }}'
     ports:
       - '80:80'
     volumes:

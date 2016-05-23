@@ -1,9 +1,9 @@
 ---
 - name: check network is existed
-  shell: docker network ls | grep {{docker_network}}
+  shell: docker network ls | grep {{ docker_network }}
   register: docker_nw_exist
   failed_when: docker_nw_exist.rc != 0 and docker_nw_exist.rc != 1
 
 - name: create network if not exist
-  command: docker network create --driver=bridge {{docker_network}}
+  command: docker network create --driver=bridge {{ docker_network }}
   when: docker_nw_exist.rc == 1

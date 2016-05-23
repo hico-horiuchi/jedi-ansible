@@ -10,7 +10,7 @@
 - name: enable remote api
   lineinfile:
     dest: /etc/default/docker
-    line: "DOCKER_OPTS=' -H tcp://0.0.0.0:4750 -H unix:///var/run/docker.sock'"
+    line: "DOCKER_OPTS=' -H tcp://0.0.0.0:{{ remote_api_port }} -H unix:///var/run/docker.sock'"
 
 - name: restart docker daemon
   service:

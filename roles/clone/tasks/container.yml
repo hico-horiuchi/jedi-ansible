@@ -1,10 +1,10 @@
 ---
-- name: reload docker container {{item}}
+- name: reload docker container {{ item }}
   docker:
-    name: clone-{{item}}
+    name: clone-{{ item }}
     image: jedi/clone
     state: reloaded
     net: '{{docker_network}}'
     volumes:
       - '/etc/docker/clone:/etc/nginx/sites-enabled:ro'
-      - '/var/docker/clone-{{item}}:/var/www/html:ro'
+      - '/var/docker/clone-{{ item }}:/var/www/html:ro'

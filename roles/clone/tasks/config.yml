@@ -5,7 +5,7 @@
     state: directory
     recurse: yes
 
-- name: copy load_balancer
+- name: copy default
   copy:
     src: default
     dest: /etc/docker/clone/default

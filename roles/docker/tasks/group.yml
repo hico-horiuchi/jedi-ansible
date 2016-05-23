@@ -5,6 +5,6 @@
 
 - name: add your user to docker group
   user:
-    name: '{{ansible_env.USER}}'
+    name: '{{ ansible_env.USER }}'
     groups: docker
     append: yes
