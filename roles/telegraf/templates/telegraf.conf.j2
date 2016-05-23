@@ -1,0 +1,11 @@
+[agent]
+  interval = "10s"
+
+[[outputs.influxdb]]
+  urls = ["http://influxdb:8086"]
+  database = "telegraf"
+  precision = "s"
+  timeout = "5s"
+
+[[inputs.nginx]]
+  urls = ["http://clone-{{item}}/server_status"]

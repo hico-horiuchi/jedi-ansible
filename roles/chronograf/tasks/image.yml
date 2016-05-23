@@ -1,0 +1,10 @@
+---
+- name: clone official dockerfile
+  git:
+    repo: git://github.com/influxdata/chronograf-docker.git
+    dest: /tmp/docker/chronograf
+
+- name: build docker image
+  docker_image:
+    path: /tmp/docker/chronograf/0.13
+    name: jedi/chronograf

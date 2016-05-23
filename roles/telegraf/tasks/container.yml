@@ -1,0 +1,9 @@
+---
+- name: reload docker container {{item}}
+  docker:
+    name: telegraf-{{item}}
+    image: jedi/telegraf
+    state: reloaded
+    net: jedi_nw
+    volumes:
+      - '/etc/docker/telegraf-{{item}}:/etc/telegraf:ro'

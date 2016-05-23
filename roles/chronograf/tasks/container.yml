@@ -1,0 +1,17 @@
+---
+- name: create data directory
+  file:
+    path: /var/docker/chronograf
+    state: directory
+    recurse: yes
+
+- name: reload docker container
+  docker:
+    name: chronograf
+    image: jedi/chronograf
+    state: reloaded
+    net: jedi_nw
+    ports:
+      - '10000:10000'
+    volumes:
+      - '/var/docker/chronograf:/var/lib/chronograf'

@@ -1,0 +1,11 @@
+---
+- name: create configuration directory {{item}}
+  file:
+    path: /etc/docker/telegraf-{{item}}
+    state: directory
+    recurse: yes
+
+- name: copy telegraf.conf {{item}}
+  template:
+    src: telegraf.conf.j2
+    dest: /etc/docker/telegraf-{{item}}/telegraf.conf

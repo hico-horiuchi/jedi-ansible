@@ -6,7 +6,7 @@ server {
     try_files $uri $uri/ =404;
   }
 
-  location /server-status {
+  location /server_status {
     stub_status on;
     access_log off;
   }

@@ -1,0 +1,10 @@
+---
+- name: clone official dockerfile
+  git:
+    repo: git://github.com/influxdata/telegraf-docker.git
+    dest: /tmp/docker/telegraf
+
+- name: build docker image
+  docker_image:
+    path: /tmp/docker/telegraf/0.13
+    name: jedi/telegraf
