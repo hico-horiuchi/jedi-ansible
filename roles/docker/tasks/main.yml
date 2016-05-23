@@ -1,2 +1,14 @@
 ---
+- include: prerequisites.yml
+  become: yes
+
+- include: install.yml
+  become: yes
+
+- include: python.yml
+  become: yes
+
+- include: group.yml
+  become: yes
+
 - include: network.yml

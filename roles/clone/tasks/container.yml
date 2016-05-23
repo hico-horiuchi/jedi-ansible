@@ -4,7 +4,7 @@
     name: clone-{{item}}
     image: jedi/clone
     state: reloaded
-    net: jedi_nw
+    net: '{{docker_network}}'
     volumes:
       - '/etc/docker/clone:/etc/nginx/sites-enabled:ro'
       - '/var/docker/clone-{{item}}:/var/www/html:ro'

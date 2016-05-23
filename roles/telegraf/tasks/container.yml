@@ -4,6 +4,6 @@
     name: telegraf-{{item}}
     image: jedi/telegraf
     state: reloaded
-    net: jedi_nw
+    net: '{{docker_network}}'
     volumes:
       - '/etc/docker/telegraf-{{item}}:/etc/telegraf:ro'

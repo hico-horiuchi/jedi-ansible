@@ -10,7 +10,7 @@
     name: chronograf
     image: jedi/chronograf
     state: reloaded
-    net: jedi_nw
+    net: '{{docker_network}}'
     ports:
       - '10000:10000'
     volumes:

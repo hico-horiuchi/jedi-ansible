@@ -10,7 +10,7 @@
     name: influxdb
     image: jedi/influxdb
     state: reloaded
-    net: jedi_nw
+    net: '{{docker_network}}'
     ports:
       - '8083:8083'
       - '8086:8086'
