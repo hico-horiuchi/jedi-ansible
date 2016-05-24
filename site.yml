@@ -7,7 +7,7 @@
   tags:
     - common
 
-- name: install-docker
+- name: docker
   hosts:
     - all
   roles:
@@ -15,7 +15,7 @@
   tags:
     - docker
 
-- name: clone-docker
+- name: clone
   hosts:
     - all
   roles:
@@ -23,7 +23,7 @@
   tags:
     - clone
 
-- name: nginx-docker
+- name: nginx
   hosts:
     - all
   roles:
@@ -31,7 +31,7 @@
   tags:
     - nginx
 
-- name: influxdb-docker
+- name: influxdb
   hosts:
     - all
   roles:
@@ -39,7 +39,7 @@
   tags:
     - influxdb
 
-- name: telegraf-docker
+- name: telegraf
   hosts:
     - all
   roles:
@@ -47,7 +47,7 @@
   tags:
     - telegraf
 
-- name: chronograf-docker
+- name: chronograf
   hosts:
     - all
   roles:
