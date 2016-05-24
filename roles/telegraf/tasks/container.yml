@@ -2,7 +2,7 @@
 - name: reload docker container {{ item }}
   docker:
     name: telegraf-{{ item }}
-    image: jedi/telegraf
+    image: telegraf
     state: reloaded
     net: '{{docker_network}}'
     volumes:

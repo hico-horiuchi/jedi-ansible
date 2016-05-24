@@ -8,7 +8,7 @@
 - name: reload docker container
   docker:
     name: influxdb
-    image: jedi/influxdb
+    image: influxdb
     state: reloaded
     net: '{{ docker_network }}'
     ports:

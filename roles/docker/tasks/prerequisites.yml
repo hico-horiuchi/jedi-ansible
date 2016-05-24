@@ -3,10 +3,6 @@
   command: uname -r
   register: uname_r
 
-- name: update apt package index
-  apt:
-    update_cache: yes
-
 - name: install apt-transport-https
   apt:
     name: apt-transport-https
@@ -28,3 +24,9 @@
   copy:
     src: docker.list
     dest: /etc/apt/sources.list.d/docker.list
+  register: docker_list
+
+- name: update apt package index
+  apt:
+    update_cache: yes
+  when: docker_list|changed

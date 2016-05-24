@@ -1,8 +1,4 @@
 ---
-- name: update apt package index
-  apt:
-    update_cache: yes
-
 - name: install docker
   apt:
     name: docker-engine

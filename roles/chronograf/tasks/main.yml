@@ -1,6 +1,4 @@
 ---
-- include: image.yml
-
 - include: container.yml
   become: yes
 

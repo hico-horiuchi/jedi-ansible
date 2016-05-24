@@ -8,7 +8,7 @@
 - name: reload docker container
   docker:
     name: chronograf
-    image: jedi/chronograf
+    image: chronograf
     state: reloaded
     net: '{{ docker_network }}'
     ports:
