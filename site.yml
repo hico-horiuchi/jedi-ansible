@@ -1,7 +1,7 @@
 ---
 - name: common
   hosts:
-    - all
+    - jedi
   roles:
     - common
   tags:
@@ -9,7 +9,7 @@
 
 - name: docker
   hosts:
-    - all
+    - jedi
   roles:
     - docker
   tags:
@@ -17,7 +17,7 @@
 
 - name: clone
   hosts:
-    - all
+    - jedi
   roles:
     - clone
   tags:
@@ -25,7 +25,7 @@
 
 - name: nginx
   hosts:
-    - all
+    - jedi
   roles:
     - nginx
   tags:
@@ -33,7 +33,7 @@
 
 - name: influxdb
   hosts:
-    - all
+    - jedi
   roles:
     - influxdb
   tags:
@@ -41,7 +41,7 @@
 
 - name: telegraf
   hosts:
-    - all
+    - jedi
   roles:
     - telegraf
   tags:
@@ -49,7 +49,7 @@
 
 - name: chronograf
   hosts:
-    - all
+    - jedi
   roles:
     - chronograf
   tags:
