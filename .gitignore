@@ -3,4 +3,7 @@
 *.retry
 .*.swp
 .DS_Store
-hosts
+/.bundle
+/hosts
+/vendor/bin
+/vendor/bundler
