@@ -14,7 +14,8 @@
     port: '{{ remote_api_port }}'
     proto: tcp
 
-- name: restart docker daemon
+- name: start and enable docker daemon
   service:
     name: docker
-    state: restarted
+    state: started
+    enabled: yes
