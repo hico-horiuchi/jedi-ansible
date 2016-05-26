@@ -17,6 +17,10 @@ describe command("ufw status | grep #{property['remote_api_port']}/tcp") do
   its(:exit_status) { should eq 0 }
 end
 
+describe port(property['remote_api_port']) do
+  it {  should be_listening.on('::').with('tcp6') }
+end
+
 describe service('docker') do
   it { should be_enabled }
   it { should be_running }
