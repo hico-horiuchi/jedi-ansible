@@ -2,6 +2,7 @@
 - name: check network is existed
   shell: docker network ls | grep {{ docker_network }}
   register: network_exist
+  changed_when: no
   failed_when: network_exist.rc != 0 and network_exist.rc != 1
 
 - name: create network if not exist

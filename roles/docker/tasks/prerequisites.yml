@@ -2,8 +2,9 @@
 - name: get kernel release
   command: uname -r
   register: uname_r
+  changed_when: no
 
-- name: install apt-transport-https
+- name: install apxt-transport-https
   apt:
     name: apt-transport-https
 
