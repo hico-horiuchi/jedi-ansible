@@ -6,7 +6,7 @@
 
     $ brew install ansible git
     $ sudo gem install bundler
-    $ git clone git@github.com:hico-horiuchi/jedi-ansible
+    $ git clone git@github.com:hico-horiuchi/jedi-ansible.git
 
 #### Ansible
 
