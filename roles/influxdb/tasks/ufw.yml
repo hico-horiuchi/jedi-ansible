@@ -1,12 +1,6 @@
 ---
-- name: allow all access to tcp port 8083
+- name: allow all access to tcp port {{ item }}
   ufw:
     rule: allow
-    port: 8083
-    proto: tcp
-
-- name: allow all access to tcp port 8086
-  ufw:
-    rule: allow
-    port: 8086
+    port: '{{ item }}'
     proto: tcp

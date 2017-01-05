@@ -1,10 +1,12 @@
 ---
-- name: reload docker container
-  docker:
+- name: recreate docker container
+  docker_container:
     name: nginx
     image: jedi/nginx
-    state: reloaded
-    net: '{{ docker_network }}'
+    state: started
+    recreate: yes
+    networks:
+      - name: '{{ docker_network }}'
     ports:
       - '80:80'
     volumes:

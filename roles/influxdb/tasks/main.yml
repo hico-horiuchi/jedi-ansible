@@ -4,3 +4,6 @@
 
 - include: ufw.yml
   become: yes
+  with_items:
+    - 8083
+    - 8086

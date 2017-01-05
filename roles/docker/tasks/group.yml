@@ -3,8 +3,9 @@
   group:
     name: docker
 
-- name: add you to docker group
+- name: add your user to docker group
   user:
     name: '{{ ansible_env.USER }}'
     groups: docker
     append: yes
+  when: ansible_env.USER != 'root'

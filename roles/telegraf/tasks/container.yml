@@ -1,9 +1,11 @@
 ---
-- name: reload docker container {{ item }}
-  docker:
+- name: recreate docker container {{ item }}
+  docker_container:
     name: telegraf-{{ item }}
     image: telegraf
-    state: reloaded
-    net: '{{docker_network}}'
+    state: started
+    recreate: yes
+    networks:
+      - name: '{{ docker_network }}'
     volumes:
       - '/etc/docker/telegraf-{{ item }}:/etc/telegraf:ro'

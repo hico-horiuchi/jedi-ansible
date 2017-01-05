@@ -5,12 +5,14 @@
     state: directory
     recurse: yes
 
-- name: reload docker container
-  docker:
+- name: recreate docker container
+  docker_container:
     name: chronograf
     image: chronograf
-    state: reloaded
-    net: '{{ docker_network }}'
+    state: started
+    recreate: yes
+    networks:
+      - name: '{{ docker_network }}'
     ports:
       - '10000:10000'
     volumes:

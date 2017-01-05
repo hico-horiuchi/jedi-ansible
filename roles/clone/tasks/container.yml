@@ -1,10 +1,12 @@
 ---
-- name: reload docker container {{ item }}
-  docker:
+- name: recreate docker container {{ item }}
+  docker_container:
     name: clone-{{ item }}
     image: jedi/clone
-    state: reloaded
-    net: '{{docker_network}}'
+    state: started
+    recreate: yes
+    networks:
+      - name: '{{ docker_network }}'
     volumes:
       - '/etc/docker/clone:/etc/nginx/sites-enabled:ro'
       - '/var/docker/clone-{{ item }}:/var/www/html:ro'

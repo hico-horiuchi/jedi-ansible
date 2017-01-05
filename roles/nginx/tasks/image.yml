@@ -1,5 +1,5 @@
 ---
-- name: create context directory
+- name: create temporary directory
   file:
     path: /tmp/docker/nginx
     state: directory

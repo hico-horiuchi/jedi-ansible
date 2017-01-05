@@ -2,6 +2,9 @@
 - name: install docker
   apt:
     name: docker-engine
+  notify:
+    - restart host
+    - wait for host to come back
 
 - name: enable remote api
   lineinfile:

@@ -1,20 +1,15 @@
 ---
 - name: get kernel release
   command: uname -r
-  register: uname_r
-  changed_when: no
+  register: get_kernel_release
 
-- name: install apxt-transport-https
+- name: install required packages
   apt:
-    name: apt-transport-https
-
-- name: install ca-certificates
-  apt:
-    name: ca-certificates
-
-- name: install recommended package
-  apt:
-    name: linux-image-extra-{{ uname_r.stdout }}
+    name: '{{ item }}'
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - linux-image-extra-{{ get_kernel_release.stdout }}
 
 - name: add new gpg key
   apt_key:
@@ -25,9 +20,9 @@
   template:
     src: docker.list.j2
     dest: /etc/apt/sources.list.d/docker.list
-  register: docker_list
+  register: create_docker_list
 
 - name: update apt package index
   apt:
     update_cache: yes
-  when: docker_list|changed
+  when: create_docker_list|changed
